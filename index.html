@@ -160,7 +160,7 @@
             }
 
             function showDrivers() {
-                $.getJSON('http://aproxy.noip.me/LocationDBWeb/api/getDriverMarkersPost.php?lat=' + curLat + '&lon=' +
+                $.getJSON('http://aproxy.noip.me/api?lat=' + curLat + '&lon=' +
                     curLon + '&rad=10.0',
                     function (autos) {
                         for (auto of autos) {
