@@ -160,6 +160,10 @@
             }
 
             function showDrivers() {
+		var image = {
+			url: 'img/ayeauto_marker.png', // image is 512 x 512
+			//scaledSize : new google.maps.Size(22, 32)
+		    };
                 $.getJSON('http://aproxy.noip.me/api?lat=' + curLat + '&lon=' +
                     curLon + '&rad=10.0',
                     function (autos) {
@@ -167,7 +171,9 @@
                             var latLng = new google.maps.LatLng(auto.lat, auto.lon);
                             var marker = new google.maps.Marker({
                                 position: latLng,
-                                map: map
+                                map: map,
+				icon:image,
+				title:auto.phone,
                             });
                         }
                     });
