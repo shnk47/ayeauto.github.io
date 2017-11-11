@@ -2,8 +2,10 @@ var map;
 var curLat = 11.2588;
 var curLon = 75.7804;
 
+var navbarHight = 65;
+
 $(window).on('resize', function () {
-    $("#map").height($(window).height());
+    $("#map").height($(window).height() - navbarHight);
     $("#map").width($(window).width());
 }).trigger('resize'); //on page load
 

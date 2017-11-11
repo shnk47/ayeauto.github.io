@@ -285,13 +285,12 @@ section h3.section-subheading {
   font-weight: 400;
   margin-bottom: 75px;
 }
-/*
-@media(min-width:768px) {
-	section {
-		padding: 150px 0;
-	}
+@media (min-width: 768px) {
+  section {
+    padding: 65px 0;
+    height: 100vh;
+  }
 }
-*/
 .service-heading {
   margin: 15px 0;
   text-transform: none;
