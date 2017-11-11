@@ -285,6 +285,11 @@ section h3.section-subheading {
   font-weight: 400;
   margin-bottom: 75px;
 }
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media (min-width: 768px) {
   section {
     padding: 65px 0;
