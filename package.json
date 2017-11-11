@@ -1,0 +1,23 @@
+{
+  "name": "ayeauto.github.io",
+  "version": "1.0.0",
+  "description": "Ayeauto website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "less": "node ./node_modules/less/bin/lessc ./less/agency.less css/agency.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayeauto/ayeauto.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayeauto/ayeauto.github.io/issues"
+  },
+  "homepage": "https://github.com/ayeauto/ayeauto.github.io#readme",
+  "devDependencies": {
+    "less": "^2.7.3"
+  }
+}
