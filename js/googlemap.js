@@ -116,7 +116,7 @@ function showDrivers(lat, lon) {
         url: 'img/ayeauto_marker.png', // image is 512 x 512
         //scaledSize : new google.maps.Size(22, 32)
     };
-    $.getJSON('http://aproxy.noip.me/api?lat=' + lat + '&lon=' + lon + '&rad=10.0', function (autos) {
+    $.getJSON('http://aproxy.noip.me/api?latitude=' + lat + '&longitude=' + lon + '&rad=10.0&type=driver', function (autos) {
         for (auto of autos) {
             var latLng = new google
                 .maps
