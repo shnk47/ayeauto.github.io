@@ -117,10 +117,11 @@ function showDrivers(lat, lon) {
         //scaledSize : new google.maps.Size(22, 32)
     };
     $.getJSON('http://aproxy.noip.me/api?latitude=' + lat + '&longitude=' + lon + '&rad=10.0&type=driver', function (autos) {
+	//console.log("autos:"+autos);
         for (auto of autos) {
             var latLng = new google
                 .maps
-                .LatLng(auto.lat, auto.lon);
+                .LatLng(auto.latitude, auto.longitude);
             var marker = new google
                 .maps
                 .Marker({position: latLng, map: map, icon: image, title: auto.phone});
