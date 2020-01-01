@@ -14,10 +14,10 @@ function initAutocomplete() {
         .maps
         .Map(document.getElementById('map'), {
             center: {
-                lat: 11.2588,
-                lng: 75.7804
+                lat: 20.5937,
+                lng: 78.9629
             },
-            zoom: 13,
+            zoom: 5,
             mapTypeId: 'roadmap'
         });
 
