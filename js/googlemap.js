@@ -100,6 +100,12 @@ function initAutocomplete() {
 function showPosition(position) {
    // x.innerHTML = "Latitude: " + position.coords.latitude + 
    // "<br>Longitude: " + position.coords.longitude;
+
+	if(curLat == position.coords.latitude)
+	   return;
+	else // avoid reloading map if same lattitude
+	  curLat = position.coords.latitude;
+
 	map = new google
         .maps
         .Map(document.getElementById('map'), {
@@ -110,8 +116,11 @@ function showPosition(position) {
             mapTypeId: 'terrain'
         });
 
+	var newLoc = {lat: position.coords.latitude, lng: position.coords.longitude};
+
+
 	var markerg =  
-               new google.maps.Marker({position:position, map:map, title:"You are here!"}); 
+               new google.maps.Marker({position:newLoc, map:map, title:"You are here!"}); 
 }
 
 function initMap() {
