@@ -96,6 +96,24 @@ function initAutocomplete() {
     });
 }
 
+//The showPosition() function outputs the Latitude and Longitude
+function showPosition(position) {
+   // x.innerHTML = "Latitude: " + position.coords.latitude + 
+   // "<br>Longitude: " + position.coords.longitude;
+	map = new google
+        .maps
+        .Map(document.getElementById('map'), {
+            zoom: 15,
+            center: new google
+                .maps
+                .LatLng(position.coords.latitude, position.coords.longitude),
+            mapTypeId: 'terrain'
+        });
+
+	var markerg =  
+               new google.maps.Marker({position:position, map:map, title:"You are here!"}); 
+}
+
 function initMap() {
     map = new google
         .maps
@@ -107,6 +125,10 @@ function initMap() {
             mapTypeId: 'terrain'
         });
 
+	if (navigator.geolocation) {
+      //the watchposition() method show the position of the user and update it while is moving
+        navigator.geolocation.watchPosition(showPosition);
+    } 
     //showDrivers();
 }
 
