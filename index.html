@@ -19,11 +19,17 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     <!-- jQuery -->
    <script>
+   var debug_mobile = "desktop";
    var hosta = window.location.protocol+"7";
+	var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+	if (isMobile) {
+  	/* your code here */
+	debug_mobile = "mobile";
+	}
    </script>
    <script>   
 	var host = "ayeauto.live"
-	if (window.location.host == host && window.location.protocol != "https:") {
+	if (window.location.host == host && window.location.protocol != "https:" && debug_mobile == "mobile") {
   	window.location.protocol = "https:"
 	}
    </script>
@@ -42,10 +48,10 @@
     </style>
 </head>
 <body id="page-top" class="index">
-     <!h1>
+     <h1>
       the value for number is:
       <script type="text/javascript">
-        document.write(hosta)
+        document.write(debug_mobile)
       </script>
     </h1>
     <!-- Navigation -->
