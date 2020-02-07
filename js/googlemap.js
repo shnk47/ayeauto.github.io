@@ -127,6 +127,9 @@ function showPosition(position) {
 	var markerg =  
                new google.maps.Marker({position:newLoc, map:map, title:"You are here!"}); 
 beep();
+
+        debug_mobile = ""+position.coords.accuracy;
+      
 }
 
 function initMap() {
