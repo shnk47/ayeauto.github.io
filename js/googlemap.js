@@ -106,6 +106,9 @@ function showPosition(position) {
    // x.innerHTML = "Latitude: " + position.coords.latitude + 
    // "<br>Longitude: " + position.coords.longitude;
 
+        debug_mobile = "..."+position.coords.accuracy;
+        console.log(debug_mobile);
+
 	if(curLat == position.coords.latitude)
 	   return;
 	else // avoid reloading map if same lattitude
@@ -126,14 +129,17 @@ function showPosition(position) {
 
 	var markerg =  
                new google.maps.Marker({position:newLoc, map:map, title:"You are here!"}); 
-beep();
 
-        debug_mobile = ""+position.coords.accuracy;
-      
+	var infowindow = new google
+                .maps
+                .InfoWindow({content:"click"});
+beep();      
+    console.log("position.coords.accuracy:"+position.coords.accuracy);
 }
 
 function initMap() {
 //beep();
+    console.log("initMap");
     map = new google
         .maps
         .Map(document.getElementById('map'), {
