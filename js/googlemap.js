@@ -181,7 +181,7 @@ function showDrivers(lat, lon) {
         for (auto of autos) {
             var latLng = new google
                 .maps
-                .LatLng(auto.latitude, auto.longitude);
+                .LatLng(auto.lat, auto.lon);
             var marker = new google
                 .maps
                 .Marker({position: latLng, map: map, icon: image, title: auto.phone});
