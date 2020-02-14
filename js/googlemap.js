@@ -1,7 +1,7 @@
 var map;
 var curLat = 11.2588;
 var curLon = 75.7804;
-
+var x = document.getElementById("Test");
 var navbarHight = 65;
 
 $(window).on('resize', function () {
@@ -135,6 +135,9 @@ function showPosition(position) {
                 .InfoWindow({content:"click"});
 beep();      
     console.log("position.coords.accuracy:"+position.coords.accuracy);
+	
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
 }
 
 function initMap() {
