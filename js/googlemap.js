@@ -109,6 +109,12 @@ function showPosition(position) {
         debug_mobile = "..."+position.coords.accuracy;
         console.log(debug_mobile);
 
+	var difference = (position.coords.latitude - curLat)
+        if(difference < 0)difference=difference*-1
+
+        if(difference <= 0.0001)
+	   return
+
 	if(curLat == position.coords.latitude)
 	   return;
 	else // avoid reloading map if same lattitude
