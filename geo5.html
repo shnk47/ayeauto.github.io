@@ -8,6 +8,7 @@
  
 <script>
 var x = document.getElementById("Test");
+var curLat = 1.0;
  
 function getLocation() {
     //Check if Geolocation is supported 
@@ -23,6 +24,13 @@ function getLocation() {
 function showPosition(position) {
     x.innerHTML = "Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;
+var difference = (position.coords.latitude - curLat);
+        if(difference < 0)
+         difference=difference*-1;
+x.innerHTML = "Latitude: "+difference;
+
+curLat = position.coords.latitude;
+
 }
 </script>
  
