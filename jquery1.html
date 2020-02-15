@@ -9,22 +9,15 @@
     <div class="mypanel"></div>
 
     <script>
-    var count = 0;
-    $.getJSON('https://ayeauto.live/markerResp1.html', function(data) {
-        var jsonArray=JSON.parse(data);
-	jsonArray.forEach(markerFunction);
-
-        var text = data;
-//		   `Date: ${jsonArray.app}<br>
-  //                  Time: ${jsonArray.lat}<br>
-    //                Unix time: ${jsonArray.lon}`
+    $.getJSON('http://time.jsontest.com', function(data) {
+        
+        var text = `Date: ${data.date}<br>
+                    Time: ${data.time}<br>
+                    Unix time: ${data.milliseconds_since_epoch}`
                     
         
-        //$(".mypanel").html(text);
+        $(".mypanel").html(text);
     });
-    function markerFunction(val){
-        $(".mypanel").html(val.app+'');
-     }
     </script>
     
 </body>
