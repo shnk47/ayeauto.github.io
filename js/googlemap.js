@@ -178,21 +178,47 @@ function showDrivers(lat, lon) {
  //   $.getJSON('https://ayeauto.live/markerResp.php', function (autos) {
     //$.getJSON('http://aproxy.noip.me/api?latitude=' + lat + '&longitude=' + lon + '&rad=10.0&type=driver', function (autos) {
 	//console.log("autos:"+autos);
-        for (auto of resp) {
-            var latLng = new google
+        //for (auto of resp) {
+          //  var latLng = new google
+            //    .maps
+              //  .LatLng(auto.lat, auto.lon);
+            //var marker = new google
+              //  .maps
+               // .Marker({position: latLng, map: map, icon: image, title: "auto.phone"});
+
+//            var infowindow = new google
+  //              .maps
+    //            .InfoWindow({content: "auto.phone"});
+
+      //      marker.addListener('click', function () {
+        //        infowindow.open(map, marker);
+          //  });
+        //}
+
+	resp.forEach(markerFunction);
+   // });
+}
+
+function markerFunction(auto) {
+    var image = {
+        url: 'img/ayeauto_marker.png', // image is 512 x 512
+        //scaledSize : new google.maps.Size(22, 32)
+    };
+    debug_mobile = debug_mobile + auto.lat + "<br>";
+
+    var latLng = new google
                 .maps
                 .LatLng(auto.lat, auto.lon);
-            var marker = new google
+    var marker = new google
                 .maps
                 .Marker({position: latLng, map: map, icon: image, title: "auto.phone"});
 
-            var infowindow = new google
+    var infowindow = new google
                 .maps
                 .InfoWindow({content: "auto.phone"});
 
-            marker.addListener('click', function () {
+     marker.addListener('click', function () {
                 infowindow.open(map, marker);
             });
-        }
-   // });
 }
+
