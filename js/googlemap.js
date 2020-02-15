@@ -211,11 +211,11 @@ function markerFunction(auto) {
                 .LatLng(auto.lat, auto.lon);
     var marker = new google
                 .maps
-                .Marker({position: latLng, map: map, icon: image, title: "auto.phone"});
+                .Marker({position: latLng, map: map, icon: image, title: auto.number_plate});
 
     var infowindow = new google
                 .maps
-                .InfoWindow({content: "auto.phone"});
+                .InfoWindow({content: auto.phone});
 
      marker.addListener('click', function () {
                 infowindow.open(map, marker);
