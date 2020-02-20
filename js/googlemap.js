@@ -119,7 +119,7 @@ function showPosition(position) {
 	if(curLat == position.coords.latitude)
 	   return;
 	else // avoid reloading map if same lattitude
-	  curLat = position.coords.latitude;
+	  {curLat = position.coords.latitude;curLon=position.coords.longitude; }
 
 	map = new google
         .maps
