@@ -200,7 +200,7 @@ function showDrivers(lat, lon) {
     //});
 	
 	$.ajax({
-        url:'http://approxy.noip.me/ws?latitude=' + lat + '&longitude=' + lon + '&rad=10.0&type=driver_debug', 
+        url:'approxy.noip.me/ws?type=driver_debug'
         dataType : 'json',
         async : false,
         success : function(autos) { 
