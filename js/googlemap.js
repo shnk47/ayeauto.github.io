@@ -172,6 +172,7 @@ function initMap() {
 
 function showDrivers(lat, lon) {
     console.log("showDrivers" + lat);
+    alert(lat);
     var image = {
         url: 'img/ayeauto_marker.png', // image is 512 x 512
         //scaledSize : new google.maps.Size(22, 32)
