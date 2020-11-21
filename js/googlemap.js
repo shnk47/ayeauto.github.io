@@ -229,7 +229,7 @@ function markerFunction(auto) {
         url: 'img/ayeauto_marker.png', // image is 512 x 512
         //scaledSize : new google.maps.Size(22, 32)
     };
-    debug_mobile = debug_mobile + auto.lat + "<br>";
+    //debug_mobile = debug_mobile + auto.lat + "<br>";
     
     var coor = auto.location.coordinates; // coor[0] = lon , coor[1]=lattitude
     
