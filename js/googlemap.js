@@ -211,7 +211,7 @@ function showDrivers(lat, lon) {
             }
 	});
 	*/
-$.getJSON("http://http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1", function(data) {
+$.getJSON('http://http://approxy.ddns.net/ws?',{type='driver',latitude=11.2958647,longitude=75.7828067,rad=1}, function(data) {
   alert("success");
   $(".mypanel").html(JSON.stringify(data));
 })
