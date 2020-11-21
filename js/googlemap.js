@@ -179,7 +179,7 @@ function showDrivers(lat, lon) {
     };
     var resp = JSON.parse("[{\"app\": \"AyeAuto\", \"userType\": \"driver\", \"online\": true, \"fLon\": \"\", \"id\": 7, \"statistics\": \"count_MainBtnPress:25,count_PhoneBtnPress:0,incomingSearchNotifications:0,lastTimeOfUse:1504254224588\", \"from\": \"\", \"img\": \"http://s3.eu-central-1.amazonaws.com/bubcontacts/thumb_images/profile_sample.jpg\", \"lon\": 75.781433, \"fare_list\": \"\", \"to\": \"\", \"pickup\": false, \"tLon\": \"\", \"booked_status\": \"open\", \"confirm_to\": \"\", \"duration_aprx\": \"\", \"tLat\": \"\", \"db_set_time\": 0, \"pick_from\": \"\", \"distance_aprx\": \"\", \"hk\": \"test000007\", \"bbox\": [75.7828053, 11.2958606, 75.7828053, 11.2958606], \"in_call\": false, \"lat\": 11.2973647, \"number_plate\": \"KL-11-B-764\", \"fLat\": \"\", \"phone\": \"9895925028\", \"place\": \"Regal theater\", \"loc_time\": 1508513310967, \"acu\": 28.1000003815, \"activity\": \"active\", \"gtype\": 1}, {\"loc_time\": 1506958276834, \"statistics\": \"count_MainBtnPress:3,count_PhoneBtnPress:0,incomingSearchNotifications:2,lastTimeOfUse:1505229208635\", \"img\": \"http://s3.eu-central-1.amazonaws.com/bubcontacts/thumb_images/profile_sample.jpg\", \"phone\": \"9895925028\", \"online\": \"offline\", \"app\": \"AyeAuto\", \"in_call\": false, \"lon\": 75.786701, \"fare_list\": \"\", \"id\": 0, \"userType\": \"driver\", \"hk\": \"test000006\", \"booked_status\": \"open\", \"bbox\": [75.7828053, 11.2958579, 75.7828053, 11.2958579], \"acu\": 23.6000003815, \"activity\": \"active\", \"lat\": 11.298416, \"place\": \"Malikadavu\", \"gtype\": 1, \"number_plate\": \"KL-11-BE-1624\", \"confirm_to\": \"test000003\"}, {\"app\": \"AyeAuto\", \"userType\": \"driver\", \"online\": true, \"fLon\": \"\", \"id\": 8, \"statistics\": \"count_MainBtnPress:0,count_PhoneBtnPress:0,incomingSearchNotifications:0,lastTimeOfUse:1501937646640\", \"from\": \"\", \"img\": \"http://s3.eu-central-1.amazonaws.com/bubcontacts/thumb_images/profile_sample.jpg\", \"lon\": 75.7828067, \"fare_list\": \"\", \"to\": \"\", \"pickup\": false, \"tLon\": \"\", \"booked_status\": \"open\", \"confirm_to\": \"\", \"duration_aprx\": \"\", \"tLat\": \"\", \"db_set_time\": 0, \"pick_from\": \"\", \"distance_aprx\": \"\", \"hk\": \"test000001\", \"bbox\": [75.78238166666667, 11.287148333333334, 75.78238166666667, 11.287148333333334], \"in_call\": false, \"lat\": 11.2958647, \"number_plate\": \"KL-11-AD-6585\", \"fLat\": \"\", \"phone\": \"9895925028\", \"place\": \"easthill,kozhikode\", \"loc_time\": 1507795981817, \"acu\": 20, \"activity\": \"active\", \"gtype\": 1}]");
     //$.getJSON('https://ayeauto.live/markerResp1.html', function (autos) {
-    $.getJSON('http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1', function (autos) {
+    //$.getJSON('http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1', function (autos) {
 	//console.log("autos:"+autos);
         //for (auto of resp) {
           //  var latLng = new google
@@ -197,9 +197,9 @@ function showDrivers(lat, lon) {
         //        infowindow.open(map, marker);
           //  });
         //}
-        jsonArray=JSON.parse(autos);
-	jsonArray.forEach(markerFunction);
-    });
+        //jsonArray=JSON.parse(autos);
+	//jsonArray.forEach(markerFunction);
+   // });
 	/*
 	$.ajax({
         url:'approxy.noip.me/ws?type=driver_debug'
@@ -211,6 +211,14 @@ function showDrivers(lat, lon) {
             }
 	});
 	*/
+$.getJSON("http://http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1", function(data) {
+  alert("success");
+  $(".mypanel").html(JSON.stringify(data));
+})
+.done(function() { alert('getJSON request succeeded!'); })
+.fail(function() { alert('getJSON request failed! '); })
+.always(function() { alert('getJSON request ended!'); });
+
 }
 
 // $.getJSON('https://ayeauto.live/markerResp1.html', function (autos) {
