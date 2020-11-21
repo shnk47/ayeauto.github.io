@@ -151,6 +151,7 @@ beep();
 
 function initMap() {
 //beep();
+	alert("initMap");
     console.log("initMap");
     map = new google
         .maps
