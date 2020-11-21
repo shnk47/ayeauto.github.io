@@ -151,7 +151,7 @@ beep();
 
 function initMap() {
 //beep();
-	alert("initMap");
+//	alert("initMap");
     console.log("initMap");
     map = new google
         .maps
@@ -167,7 +167,7 @@ function initMap() {
       //the watchposition() method show the position of the user and update it while is moving
         navigator.geolocation.watchPosition(showPosition);
     } 
-    //showDrivers();
+    showDrivers();
 }
 
 function showDrivers(lat, lon) {
