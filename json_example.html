@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript - read JSON from URL</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div class="mypanel"></div>
+
+    <script>
+/*
+$.getJSON("http://approxy.ddns.net/ws?type=driver_debug", function(data) {
+  alert("success");
+  $(".mypanel").html(JSON.stringify(data));
+})
+.done(function() { alert('getJSON request succeeded!'); })
+.fail(function() { alert('getJSON request failed! '); })
+.always(function() { alert('getJSON request ended!'); });
+*/
+    $.getJSON('http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1', function(data) {
+        
+       // var text = `Date: ${data.date}<br>
+         //           Time: ${data.time}<br>
+          //          Unix time: ${data.milliseconds_since_epoch}`
+                    
+        alert( data.length);
+	//alert(JSON.stringify(data));
+	//console.log("data : "+data);
+	for(i=0;i<data.length;i++){
+		//alert(i);
+		var dat = data[i];
+		//alert(data[0]);
+		var coor = dat.location.coordinates;
+		alert(coor[0]);
+		// $(".mypanel").html(JSON.stringify(coor));
+	}
+        $(".mypanel").html(JSON.stringify(data));
+    });
+    </script>
+    
+</body>
+</html>
