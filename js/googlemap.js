@@ -212,7 +212,9 @@ function showDrivers(lat, lon) {
 	});
 	*/
 $.getJSON("http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1", function(data) {
-  alert("success");
+  //alert("success");
+  alert(JSON.stringify(data));
+  data.forEach(markerFunction);
   $(".mypanel").html(JSON.stringify(data));
 })
 .done(function() { alert('getJSON request succeeded!'); })
@@ -241,7 +243,7 @@ function markerFunction(auto) {
     //debug_mobile = debug_mobile + auto.lat + "<br>";
     
     var coor = auto.location.coordinates; // coor[0] = lon , coor[1]=lattitude
-    
+    alert(coor[0]);
     var latLng = new google
                 .maps
                 .LatLng(coor[1], coor[0]);
