@@ -211,6 +211,11 @@ function showDrivers(lat, lon) {
             }
 	});
 	*/
+$.ajaxSetup({
+    scriptCharset: "utf-8", //or "ISO-8859-1"
+    contentType: "application/json; charset=utf-8"
+});
+
 $.getJSON("http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1", function(data) {
   //alert("success");
   alert(JSON.stringify(data));
@@ -218,7 +223,7 @@ $.getJSON("http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=
   $(".mypanel").html(JSON.stringify(data));
 })
 .done(function() { alert('getJSON request succeeded!'); })
-.fail(function(jqXHR, textStatus, errorThrown) { alert(textStatus+'<<< getJSON request failed! >>'+JSON.stringify(jqXHR)); })
+.fail(function(jqXHR, textStatus, errorThrown) { alert(textStatus+'<<< getJSON request failed! >>'); })
 .always(function() { alert('getJSON request ended!'); });
 }
 
