@@ -211,10 +211,6 @@ function showDrivers(lat, lon) {
             }
 	});
 	*/
-$.ajaxSetup({
-    scriptCharset: "utf-8", //or "ISO-8859-1"
-    contentType: "application/json; charset=utf-8"
-});
 
 $.getJSON("http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1", function(data) {
   //alert("success");
