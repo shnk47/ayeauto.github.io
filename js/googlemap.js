@@ -212,11 +212,12 @@ function showDrivers(lat, lon) {
 	});
 	*/
 
-$.getJSON("http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1", function(data) {
+//$.getJSON("http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1", function(data) {
+$.getJSON("http://time.jsontest.com", function(data) {
   //alert("success");
   alert(JSON.stringify(data));
-  data.forEach(markerFunction);
-  $(".mypanel").html(JSON.stringify(data));
+  //data.forEach(markerFunction);
+  //$(".mypanel").html(JSON.stringify(data));
 })
 .done(function() { alert('getJSON request succeeded!'); })
 .fail(function(jqXHR, textStatus, errorThrown) { alert(textStatus+'<<< getJSON request failed! >>'+errorThrown); })
