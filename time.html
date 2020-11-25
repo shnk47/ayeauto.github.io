@@ -9,14 +9,15 @@
     <div class="mypanel"></div>
 
     <script>
-    $.getJSON('http://time.jsontest.com', function(data) {
+    $.getJSON('http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1', function(data) {
         
         var text = `Date: ${data.date}<br>
                     Time: ${data.time}<br>
                     Unix time: ${data.milliseconds_since_epoch}`
                     
         
-        $(".mypanel").html(text);
+        //$(".mypanel").html(text);
+	$(".mypanel").html(JSON.stringify(data));
     });
     </script>
     
