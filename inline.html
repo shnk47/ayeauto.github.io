@@ -48,77 +48,6 @@
         document.getElementsByTagName("head")[0].appendChild(script);
       }
 
-function showPosition(position) {
-   // x.innerHTML = "Latitude: " + position.coords.latitude + 
-   // "<br>Longitude: " + position.coords.longitude;
-
-        let debug_mobile = "..."+position.coords.accuracy;
-        console.log(debug_mobile);
-
-	var difference = (position.coords.latitude - curLat);
-        if(difference < 0)difference=difference*-1;
-
-        if(difference <= 0.0001)
-	   return
-
-	if(curLat == position.coords.latitude)
-	   return;
-	else // avoid reloading map if same lattitude
-	  {curLat = position.coords.latitude;curLon=position.coords.longitude; }
-
-	map = new google
-        .maps
-        .Map(document.getElementById('map'), {
-            zoom: 15,
-            center: new google
-                .maps
-                .LatLng(position.coords.latitude, position.coords.longitude),
-            mapTypeId: 'terrain'
-        });
-
-	var newLoc = {lat: position.coords.latitude, lng: position.coords.longitude};
-
-
-	var markerg =  
-               new google.maps.Marker({position:newLoc, map:map, title:"You are here!"}); 
-
-	var infowindow = new google
-                .maps
-                .InfoWindow({content:"click"});
-
-//showDrivers(curLat,curLon);
-//beep();      
-    console.log("position.coords.accuracy:"+position.coords.accuracy);
-	
-//    x.innerHTML = "Latitude: " + position.coords.latitude + 
-//    "<br>Longitude: " + position.coords.longitude;
-}
-
-function markerFunction(auto) {
-    var image = {
-        url: 'img/ayeauto_marker.png', // image is 512 x 512
-        //scaledSize : new google.maps.Size(22, 32)
-    };
-    //debug_mobile = debug_mobile + auto.lat + "<br>";
-    
-    var coor = auto.location.coordinates; // coor[0] = lon , coor[1]=lattitude
-    alert(coor[0]);
-    var latLng = new google
-                .maps
-                .LatLng(coor[1], coor[0]);
-    var marker = new google
-                .maps
-                .Marker({position: latLng, map: map, icon: image, title: "auto.number_plate"});
-
-    var infowindow = new google
-                .maps
-                .InfoWindow({content: auto.app});
-
-     marker.addListener('click', function () {
-                infowindow.open(map, marker);
-            });
-}
-
       // Loop through the results array and place a marker for each
       // set of coordinates.
       const eqfeed_callback = function (results) {
@@ -139,7 +68,7 @@ function markerFunction(auto) {
       	//the watchposition() method show the position of the user and update it while is moving
         //navigator.geolocation.watchPosition(showPosition);
 	//}
-	//map.setCenter(marker.getPosition());
+	map.setCenter(marker.getPosition());
       };
     </script>
   </head>
