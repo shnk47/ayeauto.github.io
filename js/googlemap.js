@@ -165,9 +165,13 @@ function initMap() {
 
 	if (navigator.geolocation) {
       //the watchposition() method show the position of the user and update it while is moving
-        navigator.geolocation.watchPosition(showPosition);
+      //  navigator.geolocation.watchPosition(showPosition);
+	var s;
     } 
     //showDrivers();
+    map.data.loadGeoJson(
+    "http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1"
+  );
 }
 
 function showDrivers(lat, lon) {
