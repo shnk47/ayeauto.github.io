@@ -200,18 +200,20 @@ function showDrivers(lat, lon) {
         //jsonArray=JSON.parse(autos);
 	//jsonArray.forEach(markerFunction);
    // });
-	/*
+	
 	$.ajax({
-        url:'approxy.noip.me/ws?type=driver_debug'
+	crossOrigin: true,
+        url:'http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1',
         dataType : 'json',
         async : false,
         success : function(autos) { 
-                jsonArray=JSON.parse(autos);
-		jsonArray.forEach(markerFunction);
+		alert("ajax success");
+                //jsonArray=JSON.parse(autos);
+		autos.forEach(markerFunction);
             }
 	});
-	*/
-
+	
+/*
 $.getJSON("http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1", function(data) {
   //alert("success");
   alert(JSON.stringify(data));
@@ -221,6 +223,7 @@ $.getJSON("http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=
 .done(function() { alert('getJSON request succeeded!'); })
 .fail(function(jqXHR, textStatus, errorThrown) { alert(textStatus+'<<< getJSON request failed! >>'+errorThrown); })
 .always(function() { alert('getJSON request ended!'); });
+*/
 }
 
 // $.getJSON('https://ayeauto.live/markerResp1.html', function (autos) {
