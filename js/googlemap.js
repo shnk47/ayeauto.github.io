@@ -205,6 +205,8 @@ function showDrivers(lat, lon) {
 	crossOrigin: true,
         url:'http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1',
         dataType : 'json',
+        async : false,
+	type: "GET",
         success : function(autos) { 
 		alert("ajax success");
                 //jsonArray=JSON.parse(autos);
